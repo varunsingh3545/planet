@@ -73,7 +73,7 @@ const aiModules = [
 const AIModulesGrid = () => {
   return (
     <section className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
@@ -92,7 +92,7 @@ const AIModulesGrid = () => {
         </motion.div>
 
         {/* Modules Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12 mb-16">
           {aiModules.map((module, index) => (
             <motion.div
               key={module.id}
@@ -101,9 +101,9 @@ const AIModulesGrid = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="group"
+              className="group h-full"
             >
-              <div className="glass-card p-6 h-full hover:border-glass-border/50 transition-all duration-300 relative overflow-hidden">
+              <div className="glass-card p-6 xl:p-8 h-full hover:border-glass-border/50 transition-all duration-300 relative overflow-hidden">
                 {/* Background Glow Effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-${module.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 

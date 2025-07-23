@@ -20,18 +20,16 @@ const Navbar = () => {
 
   const getNavbarStyle = () => {
     const path = location.pathname;
-    
     if (path === '/wildlife') {
-      return 'bg-wildlife/20 border-wildlife/30';
+      return 'bg-wildlife/60 backdrop-blur-md border-b border-wildlife/30 shadow-sm';
     } else if (path === '/marine') {
-      return 'bg-marine/20 border-marine/30';
+      return 'bg-marine/60 backdrop-blur-md border-b border-marine/30 shadow-sm';
     } else if (path === '/forest') {
-      return 'bg-forest/20 border-forest/30';
+      return 'bg-forest/60 backdrop-blur-md border-b border-forest/30 shadow-sm';
     } else if (path === '/research' || path === '/dashboard') {
-      return 'bg-primary/10 border-primary/20';
+      return 'bg-primary/60 backdrop-blur-md border-b border-primary/20 shadow-sm';
     }
-    
-    return 'glass-nav';
+    return 'bg-background/80 backdrop-blur-md border-b border-border shadow-sm';
   };
 
   return (

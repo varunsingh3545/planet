@@ -69,7 +69,7 @@ const InvestorSection = () => {
 
   return (
     <section className="py-20 bg-muted/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
@@ -87,7 +87,7 @@ const InvestorSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 mb-16">
           {/* Impact Metrics */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -101,7 +101,7 @@ const InvestorSection = () => {
                 Market Opportunity & Impact
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xl:gap-8">
                 {impactMetrics.map((metric, index) => (
                   <motion.div
                     key={metric.label}
@@ -110,7 +110,7 @@ const InvestorSection = () => {
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="glass-card border-glass-border">
+                    <Card className="glass-card border-glass-border xl:p-2">
                       <CardContent className="p-4">
                         <div className="flex items-center space-x-3 mb-2">
                           <metric.icon className="h-5 w-5 text-primary" />

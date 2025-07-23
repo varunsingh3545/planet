@@ -70,7 +70,7 @@ const DashboardPreview = () => {
 
   return (
     <section className="py-20 bg-muted/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
@@ -88,11 +88,11 @@ const DashboardPreview = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
           {/* Stats Grid */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-6 xl:space-y-8">
             {/* Key Metrics */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xl:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -101,7 +101,7 @@ const DashboardPreview = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="glass-card border-glass-border">
+                  <Card className="glass-card border-glass-border xl:p-2">
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-sm font-medium text-muted-foreground">
