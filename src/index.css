@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Digital Nervous System Design System - Futuristic Conservation Platform */
+
+@layer base {
+  :root {
+    /* Core Background System */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* Glass Morphic Cards */
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --glass: 210 40% 98% / 0.05;
+    --glass-border: 210 40% 98% / 0.2;
+
+    /* Popover System */
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Electric Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 4.9%;
+    --primary-glow: 217 91% 70%;
+
+    /* Secondary - Ocean Deep */
+    --secondary: 200 100% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Accent - Neon Green */
+    --accent: 142 76% 50%;
+    --accent-foreground: 222 84% 4.9%;
+    --accent-glow: 142 76% 60%;
+
+    /* Forest Theme */
+    --forest: 120 60% 25%;
+    --forest-light: 120 40% 45%;
+    --forest-glow: 120 60% 35%;
+
+    /* Wildlife Theme */
+    --wildlife: 30 80% 35%;
+    --wildlife-light: 30 60% 55%;
+    --wildlife-glow: 30 80% 45%;
+
+    /* Marine Theme */
+    --marine: 195 100% 30%;
+    --marine-light: 195 80% 50%;
+    --marine-glow: 195 100% 40%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --warning: 45 93% 47%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Muted Elements */
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Borders & Inputs */
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 217 91% 60%;
+
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-ocean: linear-gradient(180deg, hsl(var(--marine)), hsl(var(--marine-light)));
+    --gradient-forest: linear-gradient(180deg, hsl(var(--forest)), hsl(var(--forest-light)));
+    --gradient-earth: radial-gradient(circle, hsl(var(--primary-glow)), hsl(var(--primary)));
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    --shadow-accent: 0 0 30px hsl(var(--accent) / 0.4);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);
+
+    /* Animation Variables */
+    --animation-speed: 0.3s;
+    --animation-curve: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light mode overrides (minimal - platform is designed dark-first) */
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222 84% 4.9%;
+    --card: 210 40% 98%;
+    --card-foreground: 222 84% 4.9%;
+    --glass: 222 84% 4.9% / 0.05;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Components */
+  .glass-card {
+    @apply bg-glass backdrop-blur-md border border-glass-border rounded-lg;
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-nav {
+    @apply bg-background/10 backdrop-blur-lg border-b border-glass-border;
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  /* Background Overlays */
+  .bg-overlay {
+    @apply relative;
+  }
+
+  .bg-overlay::before {
+    @apply absolute inset-0 bg-background/60 backdrop-blur-sm;
+    content: '';
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Page Background Themes */
+  .bg-home {
+    background: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.1) 0%, hsl(var(--background)) 70%);
+  }
+
+  .bg-wildlife {
+    background: linear-gradient(135deg, hsl(var(--wildlife) / 0.2), hsl(var(--background)));
+  }
+
+  .bg-marine {
+    background: linear-gradient(180deg, hsl(var(--marine) / 0.2), hsl(var(--background)));
+  }
+
+  .bg-forest {
+    background: linear-gradient(135deg, hsl(var(--forest) / 0.2), hsl(var(--background)));
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  /* Hover Utilities */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-lg;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
